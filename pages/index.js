@@ -1,3 +1,7 @@
 export default function Home() {
-  return <main>Main Content on the index page (/)</main>;
+  return (
+    <main>
+      <h1>Main Content on the index page (/)</h1>
+    </main>
+  );
 }

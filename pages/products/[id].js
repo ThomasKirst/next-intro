@@ -1,7 +1,7 @@
 import { getProductById } from '../../services/productsService';
 
 export function getServerSideProps(context) {
-  const { id } = context.query;
+  const { id } = context.params;
   const product = getProductById(Number(id));
 
   return {

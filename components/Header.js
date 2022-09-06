@@ -1,12 +1,19 @@
 import styled from 'styled-components';
+import Link from 'next/link';
 
 export default function Header() {
   return (
     <PageHeader>
       <Navigation>
-        <a href="#">Startseite</a>
-        <a href="#">Produkte</a>
-        <a href="#">Kategorien</a>
+        <Link href="/">
+          <a>Startseite</a>
+        </Link>
+        <Link href="/products">
+          <a>Produkte</a>
+        </Link>
+        <Link href="/categories">
+          <a>Kategorien</a>
+        </Link>
       </Navigation>
     </PageHeader>
   );

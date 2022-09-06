@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { getProductById } from '../../services/productsService';
 
 export function getServerSideProps(context) {
@@ -16,6 +17,9 @@ export default function Product({ product }) {
 
   return (
     <>
+      <Head>
+        <title>Product: {name}</title>
+      </Head>
       <h1>Produkt: {name}</h1>
       <p>ID: {id}</p>
       <h2>Beschreibung</h2>

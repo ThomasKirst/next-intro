@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { getCategoryById } from '../../services/categoriesService';
 
 export function getServerSideProps(context) {
@@ -16,6 +17,9 @@ export default function Category({ category }) {
 
   return (
     <>
+      <Head>
+        <title>Kategorie: {name}</title>
+      </Head>
       <h1>Kategorie: {name}</h1>
       <p>ID: {id}</p>
       <h2>Beschreibung</h2>

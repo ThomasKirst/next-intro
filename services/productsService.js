@@ -56,3 +56,7 @@ export function getAllProducts() {
 export function getProductById(id) {
   return products.find((product) => product.id === id);
 }
+
+export function addProduct(product) {
+  products.push(product);
+}

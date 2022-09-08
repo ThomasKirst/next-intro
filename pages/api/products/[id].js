@@ -12,6 +12,7 @@ export default async function handler(request, response) {
     case 'PUT': {
       const data = JSON.parse(request.body);
       await Product.findByIdAndUpdate(id, data);
+      response.status(200).json({ message: 'Product updated' });
       break;
     }
     case 'DELETE': {

@@ -1,4 +1,6 @@
+import { useRouter } from 'next/router';
 import ProductForm from '../../components/ProductForm';
+import { useFetch } from '../../hooks/useFetch';
 import { getAllCategories } from '../../services/categoriesService';
 import { getProductById } from '../../services/productsService';
 
@@ -18,11 +20,25 @@ export async function getServerSideProps(context) {
 export default function Product({ product, categories }) {
   const { id, name, description, category } = product;
 
-  function updateProduct(updatedProduct) {
-    console.log(updatedProduct);
+  const router = useRouter();
+  const fetchApi = useFetch();
+
+  async function updateProduct(updatedProduct) {
+    await fetchApi(`/api/products/${product.id}`, {
+      method: 'PUT',
+      body: JSON.stringify(updatedProduct),
+    });
+
+    router.push('/products');
+    console.log('updated!');
   }
 
-  function deleteProduct() {
+  async function deleteProduct() {
+    await fetchApi(`/api/products/${product.id}`, {
+      method: 'DELETE',
+    });
+
+    router.push('/products');
     console.log('deleted!');
   }
 

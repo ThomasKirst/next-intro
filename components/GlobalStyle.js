@@ -14,6 +14,11 @@ const GlobalStyle = createGlobalStyle`
   main {
     padding: 1rem;
   }
+
+  input, button, select {
+    padding: 0.25rem;
+    font-size: 1rem;
+  }
 `;
 
 export default GlobalStyle;

@@ -1,8 +1,8 @@
-import Link from 'next/link';
-import { getAllProducts } from '../services/productsService';
+import Link from "next/link";
+import { getAllProducts } from "../services/productsService";
 
-export function getServerSideProps() {
-  const products = getAllProducts();
+export async function getServerSideProps() {
+  const products = await getAllProducts();
 
   return {
     props: {

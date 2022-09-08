@@ -1,12 +1,12 @@
-import { useState } from "react";
-import styled from "styled-components";
+import { useState } from 'react';
+import styled from 'styled-components';
 
 export default function ProductForm({ categories, product, onHandleSubmit }) {
-  const [name, setName] = useState(product.name ?? "");
-  const [description, setDescription] = useState(product.description ?? "");
-  const [price, setPrice] = useState(product.price ?? "");
+  const [name, setName] = useState(product?.name ?? '');
+  const [description, setDescription] = useState(product?.description ?? '');
+  const [price, setPrice] = useState(product?.price ?? '');
   const [category, setCategory] = useState(
-    product.categoryId ?? categories[0].id
+    product?.category.id ?? categories[0].id
   );
 
   function handleSubmit(event) {
@@ -32,7 +32,7 @@ export default function ProductForm({ categories, product, onHandleSubmit }) {
         }}
       />
 
-      <label htmlFor="description">Description</label>
+      <label htmlFor="description">Beschreibung</label>
       <input
         id="description"
         name="description"
@@ -42,7 +42,7 @@ export default function ProductForm({ categories, product, onHandleSubmit }) {
         }}
       />
 
-      <label htmlFor="price">Price</label>
+      <label htmlFor="price">Preis</label>
       <input
         id="price"
         name="description"
@@ -69,7 +69,7 @@ export default function ProductForm({ categories, product, onHandleSubmit }) {
         ))}
       </select>
 
-      <button type="submit">submit</button>
+      <button type="submit">Speichern</button>
     </Form>
   );
 }

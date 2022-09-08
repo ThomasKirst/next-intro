@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { getAllCategories } from '../services/categoriesService';
 
-export function getServerSideProps() {
-  const categories = getAllCategories();
+export async function getServerSideProps() {
+  const categories = await getAllCategories();
 
   return {
     props: { categories },

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   *,
@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 1rem;
   }
 
-  input, button {
+  input, button, select {
     padding: 0.25rem;
     font-size: 1rem;
   }

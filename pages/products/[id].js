@@ -3,10 +3,10 @@ import ProductForm from "../../components/ProductForm";
 import { getAllCategories } from "../../services/categoriesService";
 import { getProductById } from "../../services/productsService";
 
-export function getServerSideProps(context) {
+export async function getServerSideProps(context) {
   const { id } = context.params;
   const categories = getAllCategories();
-  const product = getProductById(Number(id));
+  const product = await getProductById(id);
 
   return {
     props: {

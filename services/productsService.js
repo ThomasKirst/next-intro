@@ -44,7 +44,3 @@ export async function getProductById(productId) {
     },
   };
 }
-
-export function addProduct(product) {
-  products.push(product);
-}

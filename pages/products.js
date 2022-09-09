@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { getAllProducts } from "../services/productsService";
+import Link from 'next/link';
+import { getAllProducts } from '../services/productsService';
 
 export async function getServerSideProps() {
   const products = await getAllProducts();
@@ -24,6 +24,9 @@ export default function Products({ products }) {
           </li>
         ))}
       </ul>
+      <Link href="/products/new">
+        <a>Neues Produkt anlegen</a>
+      </Link>
     </>
   );
 }

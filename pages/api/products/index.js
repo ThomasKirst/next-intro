@@ -9,8 +9,7 @@ export default async function handler(request, response) {
       return response.status(200).json({ products });
 
     case 'POST':
-      await dbConnect();
-      const data = JSON.parse(request.body);
+      const data = request.body;
 
       await Product.create(data);
 

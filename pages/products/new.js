@@ -20,6 +20,9 @@ export default function CreateProduct({ categories }) {
   async function handleSubmit(data) {
     await fetchApi('/api/products', {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify(data),
     });
 

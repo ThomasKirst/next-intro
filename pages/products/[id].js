@@ -26,6 +26,9 @@ export default function Product({ product, categories }) {
   async function updateProduct(updatedProduct) {
     await fetchApi(`/api/products/${product.id}`, {
       method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify(updatedProduct),
     });
 
